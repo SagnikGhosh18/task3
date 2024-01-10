@@ -11,17 +11,23 @@
           /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (uname == "") {
           alert("please enter user name.");
-        } else if (pwd == "") {
-          alert("enter the password");
-        } else if (!filter.test(uname)) {
-          alert("Enter valid email id.");
-        } else if (!valid(pwd)) {
-          alert("Invalid password");
-        } else {
-          alert(
-            "Success!"
-          );
+        } else if(pwd == 'SmartServTest@123'){
+            window.location = './dashboard.html';      
+        } else{
+            alert("Error");
         }
+        // else if (pwd == "") {
+        //   alert("enter the password");
+        // } else if (!filter.test(uname)) {
+        //   alert("Enter valid email id.");
+        // } else if (!valid(pwd)) {
+        //   alert("Invalid password");
+        // } else {
+        // //   alert(
+        // //     "Success!"
+        // //   );
+        
+        // }
       }
       function valid(pwd) {
         var c1 = false,
@@ -80,7 +86,9 @@
             </td>
           </tr>
           <tr>
-            
+            <td>
+                <a href=="mailto:support@smartserv.io"></a>
+            </td>
           </tr>
         </table>
       </div>
