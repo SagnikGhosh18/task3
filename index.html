@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 3</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      function login() {
+        var uname = document.getElementById("email").value;
+        var pwd = document.getElementById("pwd1").value;
+        var filter =
+          /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (uname == "") {
+          alert("please enter user name.");
+        } else if (pwd == "") {
+          alert("enter the password");
+        } else if (!filter.test(uname)) {
+          alert("Enter valid email id.");
+        } else if (!valid(pwd)) {
+          alert("Invalid password");
+        } else {
+          alert(
+            "Success!"
+          );
+        }
+      }
+      function valid(pwd) {
+        var c1 = false,
+          c2 = false;
+        for (var i = 0; i < pwd.length; i++) {
+          var x = pwd.charAt(i);
+          if (!isLetter(x) && !Number.isInteger(parseInt(x, 10)) && x !== "@")
+            return false;
+          if (isLetter(x) && x.toUpperCase() === x) c1 = true;
+          if (Number.isInteger(parseInt(x, 10))) c2 = true;
+        }
+        return c1 && c2;
+      }
+
+      function isLetter(c) {
+        return c.toLowerCase() != c.toUpperCase();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="h-tag">
+        
+      </div>
+      <div class="login">
+        <table cellspacing="2" align="center" cellpadding="8" border="0">
+          <tr>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter user name here"
+                id="email"
+                class="tb"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="password"
+                placeholder="Enter Password here"
+                id="pwd1"
+                class="tb"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="Login"
+                class="btn"
+                onClick="login()"
+              />
+            </td>
+          </tr>
+          <tr>
+            
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
